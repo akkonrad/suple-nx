@@ -1,0 +1,10 @@
+type Supplement {
+  _id: String,
+  Name: String,
+  Description: String,
+}
+
+type Query{
+  getAllSupplements:[Supplement],
+  getSupplementById(id:String):Supplement
+}
