@@ -9,11 +9,8 @@
 /* eslint-disable */
 export interface Supplement {
     _id?: Nullable<string>;
-    FirstName?: Nullable<string>;
-    LastName?: Nullable<string>;
-    Standard?: Nullable<number>;
-    FatherName?: Nullable<string>;
-    MotherName?: Nullable<string>;
+    Name?: Nullable<string>;
+    Description?: Nullable<string>;
 }
 
 export interface IQuery {

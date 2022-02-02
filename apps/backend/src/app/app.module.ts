@@ -18,9 +18,12 @@ const IS_DEV_ENV = !environment.production;
       debug: IS_DEV_ENV,
       playground: IS_DEV_ENV,
 
+      // path where your automatically generated schema will be created. Alternatively, the schema can be generated on-the-fly in memory
+      // autoSchemaFile: join(process.cwd(), 'apps/backend/src/schema/schema.gql'),
+
       //  the use of this 'path' property to auto generate the typescript classes or interface based on the GraphQL object types
       definitions: {
-        path: join(process.cwd(), 'src/graphql.schema.ts')
+        path: join(process.cwd(), 'apps/backend/src/schema/graphql.schema.ts')
       }
     })
   ],
