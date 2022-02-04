@@ -4,12 +4,16 @@ import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { environment } from '../environments/environment';
 import { join } from 'path';
-// const graphqlModules = [];
+import { ConfigModule } from '@nestjs/config';
+import { DatabaseModule } from '../database/database.module';
+import { SupleModule } from '../suple/suple.module';
 
 const IS_DEV_ENV = !environment.production;
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
+    DatabaseModule,
     GraphQLModule.forRoot({
       // defines folder paths to search for graphql files,
       typePaths: ['./**/schema/*.graphql'],
@@ -25,7 +29,8 @@ const IS_DEV_ENV = !environment.production;
       definitions: {
         path: join(process.cwd(), 'apps/backend/src/schema/graphql.schema.ts')
       }
-    })
+    }),
+    SupleModule
   ],
   controllers: [AppController],
   providers: [AppService]
