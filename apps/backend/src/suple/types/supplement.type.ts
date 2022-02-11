@@ -1,9 +1,11 @@
-export abstract class Neo4jNode {
-  label: string;
-}
+import { Field, ObjectType } from '@nestjs/graphql';
 
-export class Supplement extends Neo4jNode {
-  id: string;
+@ObjectType()
+export class Supplement {
+  @Field()
+  _id: string;
+  @Field()
   name: string;
+  @Field()
   description: string;
 }

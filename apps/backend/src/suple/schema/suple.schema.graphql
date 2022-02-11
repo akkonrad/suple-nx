@@ -1,10 +1,18 @@
 type Supplement {
-  _id: String,
-  Name: String,
-  Description: String,
+  id: String,
+  name: String,
+  description: String,
+}
+input SupplementInput {
+  name: String
+  description: String
 }
 
 type Query{
   getAllSupplements:[Supplement],
   getSupplementById(id:String):Supplement
+}
+
+type Mutation {
+  createSupplement(input: SupplementInput):Supplement
 }

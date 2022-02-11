@@ -11,9 +11,6 @@ export class CreateSupplementDto implements Partial<Supplement> {
   @IsNotEmpty()
   description!: string;
 
-  @IsString()
-  @IsNotEmpty()
-  label: string;
 }
 
 export class ReadSupplementDto implements Partial<Supplement> {
