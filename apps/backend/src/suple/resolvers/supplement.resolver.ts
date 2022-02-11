@@ -1,5 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Supplement } from '../types/supplement.type';
+import { Supplement } from '../types/supplement';
 import { Neo4jService } from 'nest-neo4j/dist';
 import { QueryResult } from 'neo4j-driver';
 import { CreateSupplementDto } from '../dtos/supplement.dto';

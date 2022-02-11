@@ -1,4 +1,4 @@
-import { Supplement } from '../types/supplement.type';
+import { Supplement } from '../types/supplement';
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateSupplementDto implements Partial<Supplement> {
