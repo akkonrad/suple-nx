@@ -8,15 +8,17 @@ import { ConfigModule } from '@nestjs/config';
 import { SupleModule } from '../suple/suple.module';
 import { Neo4jModule } from 'nest-neo4j/dist';
 import { Neo4jScheme } from 'nest-neo4j/dist/interfaces/neo4j-config.interface';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 const IS_DEV_ENV = !environment.production;
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    GraphQLModule.forRoot({
+    GraphQLModule.forRoot<ApolloDriverConfig>({
       // defines folder paths to search for graphql files,
       typePaths: ['./**/schema/*.graphql'],
+      driver: ApolloDriver,
 
       // debug values
       debug: IS_DEV_ENV,
