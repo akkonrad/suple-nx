@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MenubarModule } from 'primeng/menubar';
+import { BadgeModule } from 'primeng/badge';
 
 const primeModules = [
   InputTextModule,
   InputTextareaModule,
-  ButtonModule
+  MenubarModule,
+  ButtonModule,
+  BadgeModule
 ];
 
 @NgModule({

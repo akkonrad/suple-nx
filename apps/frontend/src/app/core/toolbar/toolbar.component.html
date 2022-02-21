@@ -1,1 +1,13 @@
-<span>frontend</span>
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="https://www.primefaces.org/primeng/showcase/assets/showcase/images/primeng-logo-dark.svg"
+         height="40"
+         class="mr-2">
+  </ng-template>
+  <ng-template pTemplate="end">
+    <span class="p-float-label">
+      <input id="search" type="text" pInputText class="p-inputtext-sm">
+      <label for="search">Search</label>
+    </span>
+  </ng-template>
+</p-menubar>
