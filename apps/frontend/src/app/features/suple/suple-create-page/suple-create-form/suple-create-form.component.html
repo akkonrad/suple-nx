@@ -1,0 +1,22 @@
+<h2>Nowy Suplement</h2>
+<form [formGroup]="form" class="ui-fluid">
+
+  <div class="my2">
+    <span class="p-float-label">
+      <input class="wide" formControlName="name" id="name" type="text" pInputText>
+      <label for="name">Name</label>
+    </span>
+  </div>
+
+  <div class="my2">
+    <span class="p-float-label">
+      <textarea class="wide" formControlName="description" id="description" rows="5" cols="30" pInputTextarea
+                [autoResize]="true"></textarea>
+      <label for="description">Description</label>
+    </span>
+  </div>
+
+  <div class="my2">
+    <p-button class="wide" label="Submit" [disabled]="form.invalid"></p-button>
+  </div>
+</form>
