@@ -7,6 +7,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { GraphqlModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     LayoutModule,
     CoreModule,
+    GraphqlModule,
     SharedModule
   ],
   providers: [],
