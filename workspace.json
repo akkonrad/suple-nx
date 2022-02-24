@@ -3,6 +3,8 @@
   "projects": {
     "backend": "apps/backend",
     "frontend": "apps/frontend",
-    "frontend-e2e": "apps/frontend-e2e"
+    "frontend-e2e": "apps/frontend-e2e",
+    "frontend-ui": "libs/frontend/ui",
+    "shared-data-access": "libs/shared/data-access"
   }
 }

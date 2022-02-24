@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'front-suple-list-page',
+  selector: 'ui-suple-list-page',
   templateUrl: './suple-list-page.component.html',
   styleUrls: ['./suple-list-page.component.scss']
 })

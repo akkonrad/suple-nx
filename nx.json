@@ -1,5 +1,5 @@
 {
-  "npmScope": "suple-nx-nest-neo-gql",
+  "npmScope": "suple",
   "affected": {
     "defaultBase": "main"
   },

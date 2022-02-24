@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
-  selector: 'suple-nx-nest-neo-gql-root',
+  selector: 'suple-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
