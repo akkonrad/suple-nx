@@ -5,6 +5,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
 
+// #TODO: move this to lib
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { RouterModule } from '@angular/router';
     ToolbarComponent
   ],
   imports: [
+    MenubarModule,
     RouterModule,
     CommonModule,
     SharedModule
