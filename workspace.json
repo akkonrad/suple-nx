@@ -5,6 +5,7 @@
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
     "frontend-ui": "libs/frontend/ui",
-    "shared-data-access": "libs/shared/data-access"
+    "shared-data-access": "libs/shared/data-access",
+    "shared-types": "libs/shared/types"
   }
 }

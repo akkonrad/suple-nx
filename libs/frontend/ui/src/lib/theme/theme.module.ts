@@ -5,9 +5,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
+import { DropdownModule } from 'primeng/dropdown';
 
 const primeModules = [
   InputTextModule,
+  DropdownModule,
   InputTextareaModule,
   MenubarModule,
   ButtonModule,

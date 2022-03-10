@@ -4,10 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
-import { GraphqlModule } from './graphql.module';
+import { CoreModule } from '@suple/frontend/ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +14,7 @@ import { GraphqlModule } from './graphql.module';
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    CoreModule,
-    GraphqlModule,
-    SharedModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="ui-fluid">
+<form [formGroup]="form" class="ui-fluid" (ngSubmit)="submitForm()">
 
   <div class="my2">
     <span class="p-float-label">
@@ -15,7 +15,51 @@
     </span>
   </div>
 
+  <ng-container formArrayName="ingredients">
+    <div class="my2">
+      <h3>Ingredients (in 100 g / 100 ml)</h3>
+      <ng-container *ngIf="ingredients.controls.length === 0">
+        <p-button type="submit" label="Add Ingredient" (click)="addIngredient()"></p-button>
+      </ng-container>
+      <ng-container *ngFor="let ingredient of ingredients.controls; index as i">
+        <div class="p-inputgroup mb2" [formGroupName]="i">
+
+          <div class="col-5 mr1">
+            <span class="p-float-label">
+              <input formControlName="name" type="text" pInputText>
+              <label>Name</label>
+            </span>
+          </div>
+
+          <div class="col-3 mr1">
+            <span class="p-float-label">
+              <input type="number" pInputText formControlName="quantity">
+              <label>Quantity</label>
+            </span>
+          </div>
+
+          <div class="col-3 mr1">
+            <span class="p-float-label">
+              <p-dropdown formControlName="unit" [options]="units" optionLabel="value"
+                          (onChange)="handleUnitChange( $event.value)"></p-dropdown>
+              <label>Unit</label>
+            </span>
+          </div>
+
+          <div class="col-1">
+            <button style="height: 3.3em" type="button" pButton icon="pi pi-plus"
+                    [disabled]="!ingredient.valid"
+                    (click)="addIngredient()"></button>
+          </div>
+        </div>
+      </ng-container>
+      <div class="summary" *ngIf="ingredientsSum">
+        Total volume: <strong>{{ingredientsSum}} {{lastUnit}}</strong>
+      </div>
+    </div>
+  </ng-container>
+
   <div class="my2">
-    <p-button class="wide" label="Submit" [disabled]="form.invalid"></p-button>
+    <p-button type="submit" label="Submit" [disabled]="form.invalid"></p-button>
   </div>
 </form>
