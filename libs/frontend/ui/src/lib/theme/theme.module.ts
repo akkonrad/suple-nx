@@ -6,6 +6,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const primeModules = [
   InputTextModule,
@@ -16,15 +17,16 @@ const primeModules = [
   BadgeModule
 ];
 
-
 @NgModule({
   declarations: [],
   imports: [
     ...primeModules,
+    FontAwesomeModule,
     CommonModule
   ],
   exports: [
-    ...primeModules
+    ...primeModules,
+    FontAwesomeModule
   ]
 })
 export class ThemeModule {

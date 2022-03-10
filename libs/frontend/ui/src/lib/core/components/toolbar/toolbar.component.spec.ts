@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToolbarComponent } from './toolbar.component';
+import { ThemeModule } from '@suple/frontend/ui';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -8,9 +9,10 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ]
+      declarations: [ToolbarComponent],
+      imports: [ThemeModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

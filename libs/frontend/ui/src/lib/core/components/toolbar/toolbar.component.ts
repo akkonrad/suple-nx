@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem, PrimeIcons } from 'primeng/api';
+import { faBriefcaseMedical } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'front-toolbar',
@@ -7,6 +8,8 @@ import { MenuItem, PrimeIcons } from 'primeng/api';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+
+  faBriefcaseMedical = faBriefcaseMedical;
 
   items: MenuItem[] = [
     {
