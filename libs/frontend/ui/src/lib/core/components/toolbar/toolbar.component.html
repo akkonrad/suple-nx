@@ -3,9 +3,17 @@
     <fa-icon class="mx3" size="2x" [icon]="faBriefcaseMedical"></fa-icon>
   </ng-template>
   <ng-template pTemplate="end">
-    <span class="p-float-label">
+    <div class="flex items-center">
+      <div class="p-inputgroup mr2">
+        <fa-icon [icon]="faSun"></fa-icon>
+        <p-inputSwitch></p-inputSwitch>
+        <fa-icon [icon]="faMoon"></fa-icon>
+      </div>
+
+      <span class="p-float-label">
       <input id="search" type="text" pInputText class="p-inputtext-sm">
       <label for="search">Search</label>
     </span>
+    </div>
   </ng-template>
 </p-menubar>

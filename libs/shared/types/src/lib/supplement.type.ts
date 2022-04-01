@@ -3,7 +3,7 @@ import { Unit } from './unit.enum';
 export interface Supplement {
   name: string;
   description: string;
-  ingredients: Ingredient;
+  ingredients: Ingredient[];
 };
 
 export interface Ingredient {

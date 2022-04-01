@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SupleCreatePageComponent } from './suple-create-page.component';
+import { SupleEditFormComponent } from './components/suple-edit-form/suple-edit-form.component';
 
 describe('CreateFormViewComponent', () => {
   let component: SupleCreatePageComponent;
@@ -8,9 +9,10 @@ describe('CreateFormViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SupleCreatePageComponent ]
+      declarations: [SupleCreatePageComponent],
+      imports: [SupleEditFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

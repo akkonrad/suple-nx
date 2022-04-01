@@ -1,0 +1,43 @@
+<form [formGroup]="form" class="ui-fluid" (ngSubmit)="submitForm()">
+
+  <div class="my2">
+    <span class="p-float-label">
+      <input class="wide" formControlName="name" id="name" type="text" pInputText>
+      <label for="name">Name</label>
+      <small class="p-error block" *ngIf="isInvalid('name')">Name is required field</small>
+    </span>
+  </div>
+
+  <div class="my2">
+    <span class="p-float-label">
+      <textarea class="wide" formControlName="description" id="description" rows="5" cols="30" pInputTextarea
+                [autoResize]="true"></textarea>
+      <label for="description">Description</label>
+      <small class="p-error block" *ngIf="isInvalid('description')">Description is required field</small>
+    </span>
+  </div>
+
+  <div>
+    <div class="my2">
+      <h3>Ingredients (in 100g / 100ml)</h3>
+
+      <ng-container formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i = index">
+        <suple-ingredient-form-control (change)="handleIngredientChange($event)" [formControlName]="i"
+                                       (onDeleteEvent)="handleIngredientDelete(i)"
+                                       [mode]="mode.READONLY"></suple-ingredient-form-control>
+      </ng-container>
+
+      <suple-ingredient-form-control [mode]="mode.NEW"
+                                     (onAddEvent)="addIngredient($event)"></suple-ingredient-form-control>
+
+      <div class="summary right" [ngClass]="{'p-error': ingredientsSum > 100}" *ngIf="ingredientsSum">
+        Total: <strong>{{ingredientsSum}} </strong> (in 100g / 100ml)
+      </div>
+    </div>
+  </div>
+  <div class="my2">
+    <p-button type="submit" label="Submit" [disabled]="form.invalid"></p-button>
+  </div>
+</form>
+
+<pre>{{form.value|json}}</pre>

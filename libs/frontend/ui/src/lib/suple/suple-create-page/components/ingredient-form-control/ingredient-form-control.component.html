@@ -1,0 +1,58 @@
+<ng-container>
+
+  <div [className]="'flex ingredient-row '">
+    <div class="flex-auto">
+      <!-- NEW or EDIT mode -->
+      <div class="p-inputgroup mb2" *ngIf="mode !== Mode.READONLY">
+        <div class="col-6 mr1">
+            <span class="p-float-label">
+              <input type="text" pInputText [(ngModel)]="editedIngredient.name" (ngModelChange)="handleChange()" #name>
+              <label>Name</label>
+            </span>
+        </div>
+
+        <div class="col-3 mr1">
+            <span class="p-float-label">
+              <input type="number" pInputText min="0" max="100" [(ngModel)]="editedIngredient.quantity"
+                     (ngModelChange)="handleChange()">
+              <label>Quantity</label>
+            </span>
+        </div>
+
+        <div class="col-3 mr1">
+            <span class="p-float-label">
+              <p-dropdown [options]="units" [(ngModel)]="editedIngredient.unit" optionLabel="value"
+                          (ngModelChange)="handleChange()"
+                          optionValue="value"></p-dropdown>
+              <label>Unit</label>
+            </span>
+        </div>
+      </div>
+
+      <!-- READONLY mode -->
+      <div class="mb2 mr1" *ngIf="mode === Mode.READONLY">
+        <input class="col-12" pInputText [value]="displayName$ | async" (focusin)="handleFocus()">
+      </div>
+    </div>
+
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions" [ngClass]="mode">
+      <ng-container *ngIf="mode === Mode.NEW">
+        <button (click)="handleAddClick()" [disabled]="!(isFormValid$ | async)" class="add-ingredient"
+                type="button" pButton icon="pi pi-plus"></button>
+      </ng-container>
+
+      <ng-container *ngIf="mode === Mode.READONLY">
+        <button (click)="handleDeleteClick()" type="button" pButton icon="pi pi-trash"></button>
+      </ng-container>
+
+      <ng-container *ngIf="mode === Mode.EDIT">
+        <button (click)="handleCancelClick()" class="add-ingredient"
+                type="button" pButton [icon]="'pi ' + (touched ? 'pi-times' : 'pi-ban')"></button>
+        <button (click)="handleSaveClick()" type="button" pButton icon="pi pi-save"></button>
+      </ng-container>
+    </div>
+  </div>
+
+</ng-container>

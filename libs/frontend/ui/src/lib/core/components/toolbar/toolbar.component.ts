@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem, PrimeIcons } from 'primeng/api';
-import { faBriefcaseMedical } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcaseMedical, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'front-toolbar',
@@ -8,8 +8,11 @@ import { faBriefcaseMedical } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
-
   faBriefcaseMedical = faBriefcaseMedical;
+  faMoon = faMoon;
+  faSun = faSun;
+
+  nightMode = false;
 
   items: MenuItem[] = [
     {
@@ -46,6 +49,21 @@ export class ToolbarComponent {
           label: 'List',
           icon: PrimeIcons.LIST,
           routerLink: ['suple', 'list']
+        }
+      ]
+    },
+    {
+      label: 'Learn',
+      icon: PrimeIcons.BOOK,
+      styleClass: 'p-ml-6',
+      items: [
+        {
+          label: 'Dictionary',
+          icon: PrimeIcons.SORT_NUMERIC_DOWN
+        },
+        {
+          label: 'Articles',
+          icon: PrimeIcons.FILE
         }
       ]
     },

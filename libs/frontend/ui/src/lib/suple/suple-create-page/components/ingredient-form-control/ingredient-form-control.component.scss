@@ -1,0 +1,13 @@
+.actions {
+  &.new, &.readonly {
+    padding-left: 56px;
+  }
+
+  button {
+    height: 3.3em;
+
+    &:not(:last-child) {
+      margin-right: var(--space-1);
+    }
+  }
+}

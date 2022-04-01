@@ -7,9 +7,11 @@ import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 const primeModules = [
   InputTextModule,
+  InputSwitchModule,
   DropdownModule,
   InputTextareaModule,
   MenubarModule,
