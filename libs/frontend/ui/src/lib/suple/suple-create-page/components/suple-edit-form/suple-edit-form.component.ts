@@ -46,17 +46,8 @@ export class SupleEditFormComponent {
     return !this.form.get(controlName)!.valid && this.form.get(controlName)!.dirty;
   }
 
-  getIngredientText(index: number) {
-    return this.ingredients.at(index).get('name')!.value + this.ingredients.at(index).get('quantity')!.value;
-  }
-
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(this.addIngredientFormControl(ingredient));
-  }
-
-  // TODO: replace with this.form.get('...').valueChanges
-  handleIngredientChange(item: any) {
-    console.log('handleIngredientChange()');
   }
 
   handleIngredientDelete(index: number) {
