@@ -18,26 +18,30 @@
   </div>
 
   <div>
-    <div class="my2">
-      <h3>Ingredients (in 100g / 100ml)</h3>
+    <h3>Ingredients (in 100g / 100ml)</h3>
 
-      <ng-container formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i = index">
-        <suple-ingredient-form-control (change)="handleIngredientChange($event)" [formControlName]="i"
-                                       (onDeleteEvent)="handleIngredientDelete(i)"
-                                       [mode]="mode.READONLY"></suple-ingredient-form-control>
-      </ng-container>
+    <ng-container formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i = index">
+      <suple-ingredient-form-control [formControlName]="i" [mode]="mode.READONLY"
+                                     (onDeleteEvent)="handleIngredientDelete(i)">
+      </suple-ingredient-form-control>
+    </ng-container>
 
-      <suple-ingredient-form-control [mode]="mode.NEW"
-                                     (onAddEvent)="addIngredient($event)"></suple-ingredient-form-control>
+    <suple-ingredient-form-control [mode]="mode.NEW"
+                                   (onAddEvent)="addIngredient($event)"></suple-ingredient-form-control>
 
-      <div class="summary right" [ngClass]="{'p-error': ingredientsSum > 100}" *ngIf="ingredientsSum">
-        Total: <strong>{{ingredientsSum}} </strong> (in 100g / 100ml)
-      </div>
+    <div class="summary right mt2" [ngClass]="{'p-error': ingredientsSum > 100}" *ngIf="ingredientsSum">
+      Total: <strong>{{ingredientsSum}} </strong> (in 100g / 100ml)
     </div>
+    <!-- TODO: add form error component -->
+    <span *ngIf="ingredients.errors?.['error']">{{ingredients.errors?.['error']}}</span>
   </div>
   <div class="my2">
     <p-button type="submit" label="Submit" [disabled]="form.invalid"></p-button>
   </div>
 </form>
 
-<pre>{{form.value|json}}</pre>
+<pre>
+  valid: {{form.valid}}
+  errors: {{form.errors|json}}
+  value: {{form.value|json}}
+</pre>

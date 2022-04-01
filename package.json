@@ -11,7 +11,7 @@
     "test:watch": "nx test",
     "postinstall": "ngcc --properties es2015 browser module main",
     "go:all": "echo todo",
-    "go:fe": "nx serve frontend",
+    "go:fe": "nx serve frontend --port 4444",
     "go:be": "nx serve backend",
     "go:db": "echo todo"
   },
