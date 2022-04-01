@@ -65,19 +65,17 @@ export class IngredientFormControlComponent implements ControlValueAccessor, Val
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
   }
 
   onChange = (ingredient: Ingredient) => {
   };
 
   onTouched = () => {
-    console.log('onTouched(:)');
   };
 
   handleAddClick() {
-    // TODO: implement save/cancel/delete
     this.onAddEvent.emit(this.editedIngredient);
+    this.editedIngredient = { name: '', quantity: 0, unit: Unit.G };
   }
 
   touched = false;
@@ -109,7 +107,6 @@ export class IngredientFormControlComponent implements ControlValueAccessor, Val
   }
 
   handleSaveClick() {
-    // TODO: on save change to view mode
     this.onChange(this.editedIngredient);
     this.updateDisplayName();
     this.mode = Mode.READONLY;

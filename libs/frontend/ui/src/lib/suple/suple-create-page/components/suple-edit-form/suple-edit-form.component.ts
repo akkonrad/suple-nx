@@ -38,7 +38,6 @@ export class SupleEditFormComponent {
     this.form = new SupleFormGroup(this.mockSuple);
   }
 
-  // TODO: put this into isControlValid decorator
   isInvalid(controlName: string): boolean {
     if (isNil(this.form.get(controlName))) {
       return true;
@@ -59,12 +58,12 @@ export class SupleEditFormComponent {
   }
 
   submitForm() {
+    // TODO: add ingredient validator SUM <= 100
     console.log('form submit: ', this.form.value);
   }
 
 
   private addIngredientFormControl(ingredient?: Ingredient) {
-    // TODO: add ingredient validator SUM <= 100
     return this.fb.control({
       name: ingredient?.name,
       quantity: ingredient?.quantity,

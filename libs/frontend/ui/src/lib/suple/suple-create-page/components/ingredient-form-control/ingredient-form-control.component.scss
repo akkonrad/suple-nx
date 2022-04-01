@@ -1,13 +1,20 @@
-.actions {
-  &.new, &.readonly {
-    padding-left: 56px;
+.ingredient-row {
+
+  &.new {
+    background: #bad7ff;
   }
 
-  button {
-    height: 3.3em;
+  .actions {
+    &.new, &.readonly {
+      padding-left: 56px;
+    }
 
-    &:not(:last-child) {
-      margin-right: var(--space-1);
+    button {
+      height: 3.3em;
+
+      &:not(:last-child) {
+        margin-right: var(--space-1);
+      }
     }
   }
 }

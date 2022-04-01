@@ -1,9 +1,9 @@
 <ng-container>
 
-  <div [className]="'flex ingredient-row '">
+  <div class="flex ingredient-row py1" [ngClass]="mode">
     <div class="flex-auto">
       <!-- NEW or EDIT mode -->
-      <div class="p-inputgroup mb2" *ngIf="mode !== Mode.READONLY">
+      <div class="p-inputgroup" *ngIf="mode !== Mode.READONLY">
         <div class="col-6 mr1">
             <span class="p-float-label">
               <input type="text" pInputText [(ngModel)]="editedIngredient.name" (ngModelChange)="handleChange()" #name>
@@ -30,14 +30,14 @@
       </div>
 
       <!-- READONLY mode -->
-      <div class="mb2 mr1" *ngIf="mode === Mode.READONLY">
+      <div class="mr1" *ngIf="mode === Mode.READONLY">
         <input class="col-12" pInputText [value]="displayName$ | async" (focusin)="handleFocus()">
       </div>
     </div>
 
 
     <!-- ACTION BUTTONS -->
-    <div class="actions" [ngClass]="mode">
+    <div class="actions">
       <ng-container *ngIf="mode === Mode.NEW">
         <button (click)="handleAddClick()" [disabled]="!(isFormValid$ | async)" class="add-ingredient"
                 type="button" pButton icon="pi pi-plus"></button>
@@ -50,7 +50,10 @@
       <ng-container *ngIf="mode === Mode.EDIT">
         <button (click)="handleCancelClick()" class="add-ingredient"
                 type="button" pButton [icon]="'pi ' + (touched ? 'pi-times' : 'pi-ban')"></button>
-        <button (click)="handleSaveClick()" type="button" pButton icon="pi pi-save"></button>
+        <button type="button" pButton icon="pi pi-save"
+                [disabled]="!(isFormValid$ | async)"
+                (click)="handleSaveClick()"
+        ></button>
       </ng-container>
     </div>
   </div>
